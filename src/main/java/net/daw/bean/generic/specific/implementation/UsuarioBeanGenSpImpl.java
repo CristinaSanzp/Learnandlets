@@ -22,25 +22,63 @@ import net.daw.bean.publicinterface.BeanInterface;
 import com.google.gson.annotations.Expose;
 
 public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
-
+    
+    
+    @Expose
+    private String nombre = "";
+    @Expose
+    private String apellidos = "";
+    @Expose
+    private String ciudad = "";
+    @Expose
+    private String skin = "";
+    @Expose
+    private String email = "";
     @Expose
     private String login = "";
     @Expose
     private String password = "";
-    @Expose(serialize = false)
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+    @Expose
+    private String foto = "";
+    
+    @Expose(serialize = false) 
     private Integer id_tipousuario = 0; //importante inicializar a 0 las claves ajenas
     @Expose(deserialize = false)
     private TipousuarioBeanGenSpImpl obj_tipousuario = null;
-    @Expose(serialize = false)
-    private Integer id_estado = 0; //importante inicializar a 0 las claves ajenas
-    @Expose(deserialize = false)
-    private EstadoBeanGenSpImpl obj_estado = null;
-    @Expose
-    private String ciudad = "";
-    @Expose
-    private String firma = "";
-    @Expose
-    private String skin = "";
+ 
+    
 
     public String getLogin() {
         return login;
@@ -74,21 +112,21 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         this.obj_tipousuario = obj_tipousuario;
     }
 
-    public Integer getId_estado() {
-        return id_estado;
-    }
+//    public Integer getId_estado() {
+//        return id_estado;
+//    }
 
-    public void setId_estado(Integer id_estado) {
-        this.id_estado = id_estado;
-    }
-
-    public EstadoBeanGenSpImpl getObj_estado() {
-        return obj_estado;
-    }
-
-    public void setObj_estado(EstadoBeanGenSpImpl obj_estado) {
-        this.obj_estado = obj_estado;
-    }
+//    public void setId_estado(Integer id_estado) {
+//        this.id_estado = id_estado;
+//    }
+//
+//    public EstadoBeanGenSpImpl getObj_estado() {
+//        return obj_estado;
+//    }
+//
+//    public void setObj_estado(EstadoBeanGenSpImpl obj_estado) {
+//        this.obj_estado = obj_estado;
+//    }
 
     public String getCiudad() {
         return ciudad;
@@ -98,13 +136,6 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
         this.ciudad = ciudad;
     }
 
-    public String getFirma() {
-        return firma;
-    }
-
-    public void setFirma(String firma) {
-        this.firma = firma;
-    }
 
     public String getSkin() {
         return skin;

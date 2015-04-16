@@ -30,7 +30,7 @@ import net.daw.connection.publicinterface.ConnectionInterface;
 import net.daw.helper.ExceptionBooster;
 import net.daw.helper.FilterBeanHelper;
 import net.daw.helper.ParameterCooker;
-import net.daw.helper.PermissionManager;
+//import net.daw.helper.PermissionManager;
 
 public class ControlOperationGenImpl implements ControlOperationInterface {
 
@@ -47,8 +47,8 @@ public class ControlOperationGenImpl implements ControlOperationInterface {
             strObject = ParameterCooker.prepareObject(request);
             Constructor oConstructor = Class.forName("net.daw.service.generic.specific.implementation." + ParameterCooker.prepareCamelCaseObject(request) + "ServiceGenSpImpl").getConstructor(String.class, String.class, Connection.class);
             oService = (TableServiceGenImpl) oConstructor.newInstance(strObject, strObject, connection);
-            PermissionManager oPermissionM = new PermissionManager();
-            perm = oPermissionM.getPermission(request, connection);           
+//            PermissionManager oPermissionM = new PermissionManager();
+//            perm = oPermissionM.getPermission(request, connection);           
         } catch (Exception ex) {
             ExceptionBooster.boost(new Exception(this.getClass().getName() + ":ControlOperationGenImpl ERROR: " + ex.getMessage()));
         }

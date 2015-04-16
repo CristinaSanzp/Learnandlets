@@ -69,14 +69,18 @@ public class UsuarioDaoGenSpImpl extends TableDaoGenImpl<UsuarioBeanGenSpImpl> {
                 } else {
                     expand--;
                     if (expand > 0) {
+                        oUsuarioBean.setNombre(oMysql.getOne(strTableName, "nombre", oUsuarioBean.getId()));
+                        oUsuarioBean.setApellidos(oMysql.getOne(strTableName, "apellidos", oUsuarioBean.getId()));
+                        oUsuarioBean.setCiudad(oMysql.getOne(strTableName, "ciudad", oUsuarioBean.getId()));
+//                        oUsuarioBean.setFirma(oMysql.getOne(strTableName, "firma", oUsuarioBean.getId()));
+                        oUsuarioBean.setSkin(oMysql.getOne(strTableName, "skin", oUsuarioBean.getId()));
+                        oUsuarioBean.setEmail(oMysql.getOne(strTableName, "email", oUsuarioBean.getId()));
                         oUsuarioBean.setLogin(oMysql.getOne(strTableName, "login", oUsuarioBean.getId()));
                         oUsuarioBean.setPassword(null);
-                        oUsuarioBean.setCiudad(oMysql.getOne(strTableName, "ciudad", oUsuarioBean.getId()));
-                        oUsuarioBean.setFirma(oMysql.getOne(strTableName, "firma", oUsuarioBean.getId()));
-                        oUsuarioBean.setSkin(oMysql.getOne(strTableName, "skin", oUsuarioBean.getId()));
+                        oUsuarioBean.setFoto(oMysql.getOne(strTableName, "foto", oUsuarioBean.getId()));
                         
                         oUsuarioBean.setId_tipousuario(Integer.parseInt(oMysql.getOne(strTableName, "id_tipousuario", oUsuarioBean.getId())));
-                        oUsuarioBean.setId_estado(Integer.parseInt(oMysql.getOne(strTableName, "id_estado", oUsuarioBean.getId())));
+//                        oUsuarioBean.setId_estado(Integer.parseInt(oMysql.getOne(strTableName, "id_estado", oUsuarioBean.getId())));
 
                         TipousuarioBeanGenSpImpl oTipousuario = new TipousuarioBeanGenSpImpl();
                         oTipousuario.setId(Integer.parseInt(oMysql.getOne(strTableName, "id_tipousuario", oUsuarioBean.getId())));
@@ -84,11 +88,11 @@ public class UsuarioDaoGenSpImpl extends TableDaoGenImpl<UsuarioBeanGenSpImpl> {
                         oTipousuario = oTipousuarioDAO.get(oTipousuario, AppConfigurationHelper.getJsonDepth());                        
                         oUsuarioBean.setObj_tipousuario(oTipousuario);
                         
-                        EstadoBeanGenSpImpl oEstado = new EstadoBeanGenSpImpl();
-                        oEstado.setId(Integer.parseInt(oMysql.getOne(strTableName, "id_estado", oUsuarioBean.getId())));
-                        EstadoDaoGenSpImpl oEstadoDAO = new EstadoDaoGenSpImpl("estado", oConnection);
-                        oEstado = oEstadoDAO.get(oEstado, AppConfigurationHelper.getJsonDepth());                        
-                        oUsuarioBean.setObj_estado(oEstado);
+//                        EstadoBeanGenSpImpl oEstado = new EstadoBeanGenSpImpl();
+//                        oEstado.setId(Integer.parseInt(oMysql.getOne(strTableName, "id_estado", oUsuarioBean.getId())));
+//                        EstadoDaoGenSpImpl oEstadoDAO = new EstadoDaoGenSpImpl("estado", oConnection);
+//                        oEstado = oEstadoDAO.get(oEstado, AppConfigurationHelper.getJsonDepth());                        
+//                        oUsuarioBean.setObj_estado(oEstado);
                     }
                 }
             } catch (Exception ex) {
@@ -109,12 +113,17 @@ public class UsuarioDaoGenSpImpl extends TableDaoGenImpl<UsuarioBeanGenSpImpl> {
                 oUsuarioBean.setId(oMysql.insertOne(strTableName));
                 isNew = true;
             }
-            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "login", oUsuarioBean.getLogin());
-            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "id_tipousuario", oUsuarioBean.getId_tipousuario().toString());
-            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "id_estado", oUsuarioBean.getId_estado().toString());
+            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "nombre", oUsuarioBean.getNombre());
+            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "apellidos", oUsuarioBean.getApellidos());
             oMysql.updateOne(oUsuarioBean.getId(), strTableName, "ciudad", oUsuarioBean.getCiudad());
-            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "firma", oUsuarioBean.getFirma());
+//            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "firma", oUsuarioBean.getFirma());
             oMysql.updateOne(oUsuarioBean.getId(), strTableName, "skin", oUsuarioBean.getSkin());
+            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "email", oUsuarioBean.getEmail());
+            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "login", oUsuarioBean.getLogin());
+            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "foto", oUsuarioBean.getFoto());
+            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "id_tipousuario", oUsuarioBean.getId_tipousuario().toString());
+//            oMysql.updateOne(oUsuarioBean.getId(), strTableName, "id_estado", oUsuarioBean.getId_estado().toString());
+            
             String prueba = oUsuarioBean.getPassword();
 
             if (isNew == false) {

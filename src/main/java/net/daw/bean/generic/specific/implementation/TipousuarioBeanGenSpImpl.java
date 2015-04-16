@@ -24,6 +24,16 @@ import net.daw.bean.publicinterface.BeanInterface;
 public class TipousuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     @Expose
     private String descripcion = "";
+    @Expose
+    private Integer puntos = 0;
+
+    public Integer getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(Integer puntos) {
+        this.puntos = puntos;
+    }
 
     public TipousuarioBeanGenSpImpl() {
 
