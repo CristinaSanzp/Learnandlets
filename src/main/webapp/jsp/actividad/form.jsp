@@ -24,37 +24,22 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label"  for="titulo">Enunciado:</label>
+        <label class="col-sm-2 control-label" for="obj_tipoactividad_id">Tipo de actividad: </label> 
+        <div class="col-sm-2">              
+            <input readonly="true"  class="form-control"  id="obj_tipoactividad_id" class="input-mini" name="id_tipoactividad" type="text" size="5" maxlength="5" />  
+        </div>
+        <div class="col-sm-1">              
+            <a class="btn btn-primary btn-sm" id="obj_tipoactividad_button" href="#"><i class="glyphicon glyphicon-search"></i></a>
+        </div>        
+        <label class="col-sm-7" for="obj_tipoactividad_desc" id="obj_tipoactividad_desc"></label>                     
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label"  for="descripcion">Descripción de la actividad:</label>
         <div class="col-sm-6">
-            <input type="text" id="enunciado" class="form-control"  name="enunciado" size="25" placeholder="enunciado" />
+            <input type="text" id="descripcion" class="form-control"  name="descripcion" size="25" placeholder="descripcion" />
         </div>
     </div>
     
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="fecha_group">Fecha:</label> 
-        <div class="col-sm-3">           
-            <div class='input-group date' id='fecha_group'>
-                <input type='text' class="form-control" id='fecha' name="fecha_group" placeholder="Fecha" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="evaluacion">Evaluacion:</label>
-        <div class="col-sm-2">
-            <input type="text"  class="form-control"  id="evaluacion" name="evaluacion" size="15" placeholder="evaluacion" />
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="col-sm-2 control-label"  for="activo">Activo:</label>
-        <div class="col-sm-1">
-            <input type="checkbox" id="activo" name="activo" value="true" />
-        </div>
-    </div>
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">

@@ -57,24 +57,24 @@ public class ControlOperationGenImpl implements ControlOperationInterface {
     @Override
     public String get(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             result = oService.get(ParameterCooker.prepareId(request));
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+          //  result = "error";
+        //}
         return result;
     }
 
     @Override
     public String getaggregateviewone(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             result = result = oService.getAggregateViewOne(ParameterCooker.prepareId(request));
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+        //    result = "error";
+        //}
 
         return result;
     }
@@ -82,12 +82,12 @@ public class ControlOperationGenImpl implements ControlOperationInterface {
     @Override
     public String getprettycolumns(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             result = oService.getPrettyColumns();
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+          //  result = "error";
+        //}
 
         return result;
     }
@@ -95,12 +95,12 @@ public class ControlOperationGenImpl implements ControlOperationInterface {
     @Override
     public String getcolumns(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             result = oService.getColumns();
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+        //    result = "error";
+        //}
 
         return result;
     }
@@ -108,16 +108,16 @@ public class ControlOperationGenImpl implements ControlOperationInterface {
     @Override
     public String getpage(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
             Integer intPage = ParameterCooker.preparePage(request);
             ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
             HashMap<String, String> hmOrder = ParameterCooker.prepareOrder(request);
             result = oService.getPage(intRegsPerPag, intPage, alFilter, hmOrder);
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+        //    result = "error";
+        //}
 
         return result;
     }
@@ -125,83 +125,83 @@ public class ControlOperationGenImpl implements ControlOperationInterface {
     @Override
     public String getpages(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
             ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
             result = oService.getPages(intRegsPerPag, alFilter);
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+          //  result = "error";
+        //}
         return result;
     }
 
     @Override
     public String getregisters(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
             result = oService.getCount(alFilter);
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+        //    result = "error";
+        //}
         return result;
     }
 
     @Override
     public String getaggregateviewsome(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             Integer intRegsPerPag = ParameterCooker.prepareRpp(request);
             Integer intPage = ParameterCooker.preparePage(request);
             ArrayList<FilterBeanHelper> alFilter = ParameterCooker.prepareFilter(request);
             HashMap<String, String> hmOrder = ParameterCooker.prepareOrder(request);
             result = oService.getAggregateViewSome(intRegsPerPag, intPage, alFilter, hmOrder);
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+        //    result = "error";
+        //}
         return result;
     }
 
     @Override
     public String remove(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             result = oService.remove(ParameterCooker.prepareId(request));
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+          //  result = "error";
+        //}
         return result;
     }
 
     @Override
     public String set(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             result = oService.set(ParameterCooker.prepareJson(request));
             closeDB();
-        } else {
-            result = "error";
-        }
+        //} else {
+        //    result = "error";
+        //}
         return result;
     }
 
     @Override
     public String updateOne(HttpServletRequest request) throws Exception {
         String result = "";
-        if (perm) {
+        //if (perm) {
             int id = Integer.parseInt(request.getParameter("id"));
             String tabla = request.getParameter("ob");
             String campo = request.getParameter("campo");
             String valor = request.getParameter("valor");
 
             result = oService.updateOne(id, tabla, campo, valor);
-        } else {
-            result = "error";
-        }
+        //} else {
+        //    result = "error";
+        //}
         return result;
     }
 

@@ -1,5 +1,5 @@
 /* 
- * Copyright (C) 2014 raznara
+ * Copyright (C) 2014 rafa
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,11 +16,13 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
+
 var actividadModel = function (strClase) {
     this.clase = strClase;
 };
 actividadModel.prototype = new model('actividad');
-actividadModel.prototype.getClassNameDocumento = function () {
+actividadModel.prototype.getClassNameActividad = function () {
     return this.getClassName() + "Modelo";
 };
 var oActividadModel = new actividadModel('actividad');
+

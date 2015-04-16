@@ -31,13 +31,19 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     @Expose
     private String ciudad = "";
     @Expose
-    private String skin = "";
-    @Expose
     private String email = "";
     @Expose
     private String login = "";
     @Expose
     private String password = "";
+    @Expose
+    private String foto = "";
+    @Expose(serialize = false) 
+    private Integer id_tipousuario = 0; //importante inicializar a 0 las claves ajenas
+    @Expose(deserialize = false)
+    private TipousuarioBeanGenSpImpl obj_tipousuario = null;
+    @Expose
+    private String skin = "";
 
     public String getNombre() {
         return nombre;
@@ -54,6 +60,14 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+    
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
 
     public String getEmail() {
         return email;
@@ -62,23 +76,6 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-    @Expose
-    private String foto = "";
-    
-    @Expose(serialize = false) 
-    private Integer id_tipousuario = 0; //importante inicializar a 0 las claves ajenas
-    @Expose(deserialize = false)
-    private TipousuarioBeanGenSpImpl obj_tipousuario = null;
- 
-    
 
     public String getLogin() {
         return login;
@@ -94,6 +91,14 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+        
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public Integer getId_tipousuario() {
@@ -111,32 +116,7 @@ public class UsuarioBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
     public void setObj_tipousuario(TipousuarioBeanGenSpImpl obj_tipousuario) {
         this.obj_tipousuario = obj_tipousuario;
     }
-
-//    public Integer getId_estado() {
-//        return id_estado;
-//    }
-
-//    public void setId_estado(Integer id_estado) {
-//        this.id_estado = id_estado;
-//    }
-//
-//    public EstadoBeanGenSpImpl getObj_estado() {
-//        return obj_estado;
-//    }
-//
-//    public void setObj_estado(EstadoBeanGenSpImpl obj_estado) {
-//        this.obj_estado = obj_estado;
-//    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-
+    
     public String getSkin() {
         return skin;
     }

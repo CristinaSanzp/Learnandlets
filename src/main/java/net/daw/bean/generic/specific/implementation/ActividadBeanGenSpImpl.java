@@ -35,75 +35,40 @@ public class ActividadBeanGenSpImpl extends BeanGenImpl implements BeanInterface
         super(id);
     }
     
+       
+    @Expose(deserialize = false)
+    private TipoactividadBeanGenSpImpl obj_tipoactividad = null;
+    
+    @Expose(serialize = false) 
+    private Integer id_tipoactividad = 0; //importante inicializar a 0 las claves ajenas
+    
     @Expose
-    private String enunciado = "";
-    //private String presentacion = "";
-    @Expose
-    private Date fecha = new Date();
-    @Expose
-    private Integer evaluacion = 0;
-    @Expose
-    private byte activo = 0;
+    private String descripcion = "";
+    
 
-    /**
-     * @return the enunciado
-     */
-    public String getEnunciado() {
-        return enunciado;
+    public Integer getId_tipoactividad() {
+        return id_tipoactividad;
     }
 
-    /**
-     * @param enunciado the enunciado to set
-     */
-    public void setEnunciado(String enunciado) {
-        this.enunciado = enunciado;
+    public void setId_tipoactividad(Integer id_tipoactividad) {
+        this.id_tipoactividad = id_tipoactividad;
     }
 
-    /**
-     * @return the fecha
-     */
-    public Date getFecha() {
-        return fecha;
+    public TipoactividadBeanGenSpImpl getObj_tipoactividad() {
+        return obj_tipoactividad;
     }
 
-    /**
-     * @param fecha the fecha to set
-     */
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    /**
-     * @return the evaluacion
-     */
-    public Integer getEvaluacion() {
-        return evaluacion;
-    }
-
-    /**
-     * @param evaluacion the evaluacion to set
-     */
-    public void setEvaluacion(Integer evaluacion) {
-        this.evaluacion = evaluacion;
-    }
-
-    /**
-     * @return the activo
-     */
-    public byte getActivo() {
-        return activo;
-    }
-
-    /**
-     * @param activo the activo to set
-     */
-    public void setActivo(byte activo) {
-        this.activo = activo;
+    public void setObj_tipoactividad(TipoactividadBeanGenSpImpl obj_tipoactividad) {
+        this.obj_tipoactividad = obj_tipoactividad;
     }
     
-    
-    
-    
-    
-    
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+   
 }

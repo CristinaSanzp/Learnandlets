@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 a021008858z
+ * Copyright (C) July 2014 Rafael Aznar
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,22 +15,16 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package net.daw.dao.generic.specific.implementation;
+package net.daw.service.generic.specific.implementation;
 
+import net.daw.service.generic.implementation.TableServiceGenImpl;
 import java.sql.Connection;
-import net.daw.bean.generic.specific.implementation.UsuarioProveedorBeanGenSpImpl;
-import net.daw.dao.generic.implementation.TableDaoGenImpl;
 
+public class TipoactividadServiceGenSpImpl extends TableServiceGenImpl {
 
-/**
- *
- * @author a021008858z
- */
-
-public class UsuarioProveedorDaoGenSpImpl extends TableDaoGenImpl<UsuarioProveedorBeanGenSpImpl> {
-
-    public UsuarioProveedorDaoGenSpImpl (String strObject, String pojo, Connection pooledConnection) throws Exception {
-        super(strObject, pojo, pooledConnection);
+    public TipoactividadServiceGenSpImpl(String strObject, String pojo, Connection con) {
+        super(strObject, pojo, con);
     }
-    
 }
+
+  

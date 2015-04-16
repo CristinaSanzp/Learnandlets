@@ -19,25 +19,12 @@ package net.daw.dao.generic.specific.implementation;
 
 import net.daw.dao.generic.implementation.TableDaoGenImpl;
 import java.sql.Connection;
-import net.daw.bean.generic.specific.implementation.TrabajoBeanGenSpImpl;
+import net.daw.bean.generic.specific.implementation.TipoactividadBeanGenSpImpl;
 
-public class TrabajoDaoGenSpImpl extends TableDaoGenImpl<TrabajoBeanGenSpImpl> {
+public class TipoactividadDaoGenSpImpl extends TableDaoGenImpl<TipoactividadBeanGenSpImpl> {
 
-   public TrabajoDaoGenSpImpl(String strFuente, Connection pooledConnection) throws Exception {
-        super(strFuente, "Tarea", pooledConnection);
+    public TipoactividadDaoGenSpImpl(String strFuente, Connection pooledConnection) throws Exception {
+        super(strFuente, "Tipoactividad", pooledConnection);
     }
 
-//    public String getDescription(int id) throws Exception {
-//        DocumentoBean oDocumentoBean = new DocumentoBean();
-//        oDocumentoBean.setId(id);
-//        oDocumentoBean = this.get(oDocumentoBean);
-//        String description;
-//        if (oDocumentoBean.getTitulo().length() > 20) {
-//            description = oDocumentoBean.getTitulo().substring(0, 19) + "...";
-//        } else {
-//            description = oDocumentoBean.getTitulo();
-//        }
-//        description += " (" + oDocumentoBean.getHits().toString() + " hits)";
-//        return description;
-//    }
 }

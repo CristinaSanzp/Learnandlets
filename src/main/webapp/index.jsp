@@ -36,7 +36,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ajax Yield</title>
+        <title>LearnAndLets</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -75,6 +75,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="jsp"><%=AppInformationHelper.getAppName()%></a>
+                    
                 </div>
                 <div class="collapse navbar-collapse">
 
@@ -110,9 +111,9 @@
             <div class="row">
                 <div class="col-md-12" id="contenidoParseado"></div>   
             </div>
-            <div class="row">
+        <!--    <div class="row">
                 <div class="col-md-12"><hr><footer><p class="pull-right">&copy; <%=EstadoHelper.getAutor()%>: <%=EstadoHelper.getMailAutor()%> (<%=EstadoHelper.getAnyo()%>) - <%=EstadoHelper.getLicenciaLink()%></p></footer></div> 
-            </div>
+            </div>-->
         </div>            
 
         <% } else {%>
@@ -218,10 +219,16 @@
         <script src="js/specific/cuestionario/model.js" charset="UTF-8"></script>
         <script src="js/specific/cuestionario/view.js" charset="UTF-8"></script>
         <script src="js/specific/cuestionario/routes.js" charset="UTF-8"></script>
+        
         <script src="js/specific/actividad/control.js" charset="UTF-8"></script>
         <script src="js/specific/actividad/model.js" charset="UTF-8"></script>
         <script src="js/specific/actividad/view.js" charset="UTF-8"></script>
         <script src="js/specific/actividad/routes.js" charset="UTF-8"></script>
+        
+        <script src="js/specific/tipoactividad/control.js" charset="UTF-8"></script>
+        <script src="js/specific/tipoactividad/model.js" charset="UTF-8"></script>
+        <script src="js/specific/tipoactividad/view.js" charset="UTF-8"></script>
+        <script src="js/specific/tipoactividad/routes.js" charset="UTF-8"></script>
 
 
         <script src="js/specific/usuario/control.js" charset="UTF-8"></script>
@@ -372,7 +379,7 @@
 
                 inicializacion();
 
-
+         
                 fDocumentoRoutes();
                 fTipotareaRoutes();
                 fTrabajoRoutes();
@@ -383,6 +390,8 @@
                 fCuestionarioRoutes();
                 fAmistadRoutes();
                 fUsuarioRoutes();
+                fTipousuarioRoutes();
+                fTipoactividadRoutes();
                 fPublicacionRoutes();
                 fRedsocialperfilRoutes();
                 fInicioRedSocialRoutes();
@@ -404,7 +413,7 @@
                 fProductoRoutes();
                 fTipoproductoRoutes();
                 fTipodocumentoRoutes();
-
+               
 
 
                 Path.listen();

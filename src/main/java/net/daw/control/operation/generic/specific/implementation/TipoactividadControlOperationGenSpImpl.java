@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 a021008858z
+ * Copyright (C) July 2014 Rafael Aznar
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,19 +15,16 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package net.daw.service.generic.specific.implementation;
+package net.daw.control.operation.generic.specific.implementation;
 
-import java.sql.Connection;
-import net.daw.service.generic.implementation.TableServiceGenImpl;
+import java.lang.reflect.InvocationTargetException;
+import javax.servlet.http.HttpServletRequest;
+import net.daw.control.operation.generic.implementation.ControlOperationGenImpl;
 
-/**
- *
- * @author a021008858z
- */
-public class UsuarioProveedorServiceGenSpImpl extends TableServiceGenImpl {
+public class TipoactividadControlOperationGenSpImpl extends ControlOperationGenImpl {
 
-    public UsuarioProveedorServiceGenSpImpl(String strObject, String pojo, Connection con) {
-        super(strObject, pojo, con);
+    public TipoactividadControlOperationGenSpImpl(HttpServletRequest request) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, Exception {
+        super(request);
     }
 
 }

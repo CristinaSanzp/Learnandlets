@@ -44,7 +44,7 @@ actividadView.prototype.loadFormValues = function (valores, campos) {
 //                    $('#actividad_form #alta').val(valores['alta']);
 //                    $('#actividad_form #cambio').val(valores['cambio']);
 //                    $('#actividad_form #hits').val(valores['hits']);
-//                    $('#actividad_form #id_usuario').val(valores['id_usuario']);
+//                    $('#actividad_form #id_actividad').val(valores['id_actividad']);
 //                    $('#actividad_form #etiquetas').val(valores['etiquetas']);
 //                    $('#actividad_form #publicado').val(valores['publicado']);
 //                    $('#actividad_form #portada').val(valores['portada']);
@@ -58,7 +58,7 @@ actividadView.prototype.getFormValues = function () {
 //                    valores['alta'] = $('#actividad_form #alta');
 //                    valores['cambio'] = $('#actividad_form #cambio');
 //                    valores['hits'] = $('#actividad_form #hits');
-//                    valores['id_usuario'] = $('#actividad_form #id_usuario');
+//                    valores['id_actividad'] = $('#actividad_form #id_actividad');
 //                    valores['etiquetas'] = $('#actividad_form #etiquetas');
 //                    valores['publicado'] = $('#actividad_form #publicado');
 //                    valores['portada'] = $('#actividad_form #portada');
@@ -71,41 +71,41 @@ actividadView.prototype.getFormValues = function () {
 
 actividadView.prototype.doEventsLoading = function () {
     var thisObject = this;
-    $('#actividadForm #obj_usuario_button').unbind('click');
-    $("#actividadForm #obj_usuario_button").click(function () {
-        var oControl = oActividadControl;  //para probar dejar actividad
-        //vista('usuario').cargaModalBuscarClaveAjena('#modal01', "actividad");
-
-        $("#actividadForm").append(thisObject.getEmptyModal());
-        util().loadForm('#modal01', thisObject.getFormHeader('Elección de usuario'), "", thisObject.getFormFooter(), true);
-
-        $('#actividadForm').append(thisObject.getEmptyModal());
-
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oActividadModel, oActividadView);
-        oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
-            $('#obj_usuario_id').val(id).change();
-            $('#obj_usuario_desc').text(decodeURIComponent(oUsuarioModel.getMeAsAForeignKey(id)));
-            $('#modal01').modal('hide');
-
-        },oActividadModel, oActividadView);
-        return false;
-    });
+//    $('#actividadForm #obj_estado_button').unbind('click');
+//    $("#actividadForm #obj_estado_button").click(function () {
+//        var oControl = oEstadoControl;  //para probar dejar actividad
+//        //vista('actividad').cargaModalBuscarClaveAjena('#modal01', "actividad");
+//
+//        $("#actividadForm").append(thisObject.getEmptyModal());
+//        util().loadForm('#modal01', thisObject.getFormHeader('Elección de actividad'), "", thisObject.getFormFooter(), true);
+//
+//        $('#actividadForm').append(thisObject.getEmptyModal());
+//
+//        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oEstadoModel, oEstadoView);
+//        oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
+//            $('#obj_estado_id').val(id).change();
+//            $('#obj_estado_desc').text(decodeURIComponent(oEstadoModel.getMeAsAForeignKey(id)));
+//            $('#modal01').modal('hide');
+//
+//        },oEstadoModel, oEstadoView);
+//        return false;
+//    });
     $('#actividadForm #obj_tipoactividad_button').unbind('click');
     $("#actividadForm #obj_tipoactividad_button").click(function () {
-        var oControl = oActividadControl;
+        var oControl = oTipoactividadControl;
 
         $("#actividadForm").append(thisObject.getEmptyModal());
         util().loadForm('#modal01', thisObject.getFormHeader('Elección de tipo de actividad'), "", thisObject.getFormFooter(), true);
 
         $('#actividadForm').append(thisObject.getEmptyModal());
 
-        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oActividadModel, oActividadView);
+        oControl.list('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), true, oTipoactividadModel, oTipoactividadView);
         oControl.modalListEventsLoading('#modal01 #modal-body', param().defaultizeUrlObjectParameters({}), function (id) {
             $('#obj_tipoactividad_id').val(id).change();
             $('#obj_tipoactividad_desc').text(decodeURIComponent(oTipoactividadModel.getMeAsAForeignKey(id)));
             $('#modal01').modal('hide');
 
-        },oActividadModel, oActividadView);
+        },oTipoactividadModel, oTipoactividadView);
         return false;
     });
     $('#contenido_button').unbind('click');

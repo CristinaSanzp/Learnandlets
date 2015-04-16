@@ -12,11 +12,21 @@ and open the template in the editor.
 
 body {
     padding-top: 80px;
+    background-color: white;
 }
 
 .jumbotron {
+    border: 1px solid lightcoral;
+    background-color: white ;
+}
 
-    background-color: #f0a30a ;
+.titulopagprincipal{
+    margin-left: 20%;
+}
+
+.bordeprin{
+    background-color: lightblue;
+    
 }
 
 .panel-default>.panel-heading {

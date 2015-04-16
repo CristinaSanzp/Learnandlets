@@ -17,13 +17,13 @@
 --%>
 
 <%@page import="java.sql.Connection"%>
-<%@page import="net.daw.dao.generic.specific.implementation.ActividadDaoGenSpImpl"%>
+<%@page import="net.daw.dao.generic.specific.implementation.TipoactividadDaoGenSpImpl"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Iterator"%>
 <%
     ArrayList<String> alColumnsNames;
     Iterator<String> oIterador;
-    String strNombreMantenimiento = "actividad";
+    String strNombreMantenimiento = "tipoactividad";
     Connection connection = (Connection) request.getAttribute("connection");    
 %>
 <div class="row">

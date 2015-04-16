@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 a021008858z
+ * Copyright (C) July 2014 Rafael Aznar
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -21,38 +21,24 @@ import com.google.gson.annotations.Expose;
 import net.daw.bean.generic.implementation.BeanGenImpl;
 import net.daw.bean.publicinterface.BeanInterface;
 
-/**
- *
- * @author a021008858z
- */
-public class UsuarioProveedorBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
+public class TipoactividadBeanGenSpImpl extends BeanGenImpl implements BeanInterface {
+    @Expose
+    private String descripcion = "";
+    
 
-    public UsuarioProveedorBeanGenSpImpl() {
+    public TipoactividadBeanGenSpImpl() {
+
     }
 
-    public UsuarioProveedorBeanGenSpImpl(Integer id) {
+    public TipoactividadBeanGenSpImpl(Integer id) {
         super(id);
     }
 
-    @Expose(serialize = false)
-    private Integer id_usuario = 0;
-    @Expose(deserialize = false)
-    private UsuarioBeanGenSpImpl obj_usuario = null;
-
-    public Integer getId_usuario() {
-        return id_usuario;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setId_usuario(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
-
-    public UsuarioBeanGenSpImpl getObj_usuario() {
-        return obj_usuario;
-    }
-
-    public void setObj_usuario(UsuarioBeanGenSpImpl obj_usuario) {
-        this.obj_usuario = obj_usuario;
-    }
-
 }

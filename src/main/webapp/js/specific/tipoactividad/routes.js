@@ -17,69 +17,67 @@
  */
 
 
-function fActividadRoutes() {
+function fTipoactividadRoutes() {
 
-//    Path.map("#/actividad").to(function () {
+//    Path.map("#/tipoactividad").to(function () {
 //        $('#indexContenidoJsp').spinner();
-//        control('actividad').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
-//        //actividadControl.modalListEventsLoading(actividadObject, actividadView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+//        control('tipoactividad').list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);
+//        //tipoactividadControl.modalListEventsLoading(tipoactividadObject, tipoactividadView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
 //        $('#indexContenidoJsp').empty();
 //        return false;
 //    });
 
-    Path.map("#/actividad").to(function () {
+    Path.map("#/tipoactividad").to(function () {
         $('#indexContenidoJsp').spinner();
-        oActividadControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oActividadModel, oActividadView);
-        //actividadControl.modalListEventsLoading(actividadObject, actividadView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
+        oTipoactividadControl.list($('#indexContenido'), param().defaultizeUrlObjectParameters({}), null, oTipoactividadModel, oTipoactividadView);
+        //tipoactividadControl.modalListEventsLoading(tipoactividadObject, tipoactividadView, $('#indexContenido'), param().defaultizeUrlObjectParameters({}), null);        
         $('#indexContenidoJsp').empty();
-        //$('#indexContenidoJsp').append(oActividadControl.getClassNameActividad());
+        //$('#indexContenidoJsp').append(oTipoactividadControl.getClassNameTipoactividad());
         return false;
     });
 
-    Path.map("#/actividad/list/:url").to(function () {
+    Path.map("#/tipoactividad/list/:url").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oActividadControl.list($('#indexContenido'), paramsObject, null, oActividadModel, oActividadView);
+        oTipoactividadControl.list($('#indexContenido'), paramsObject, null, oTipoactividadModel, oTipoactividadView);
         $('#indexContenidoJsp').empty();
         return false;
     });
 
-    Path.map("#/actividad/view/:id").to(function () {
+    Path.map("#/tipoactividad/view/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oActividadControl.view($('#indexContenido'), paramsObject['id'], oActividadModel, oActividadView);
+        oTipoactividadControl.view($('#indexContenido'), paramsObject['id'], oTipoactividadModel, oTipoactividadView);
         $('#indexContenidoJsp').empty();
 
         return false;
     });
 
-    Path.map("#/actividad/edit/:id").to(function () {
+    Path.map("#/tipoactividad/edit/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oActividadControl.edit($('#indexContenido'), paramsObject['id'], oActividadModel, oActividadView);
+        oTipoactividadControl.edit($('#indexContenido'), paramsObject['id'], oTipoactividadModel, oTipoactividadView);
         $('#indexContenidoJsp').empty();
     });
-
-    Path.map("#/actividad/new").to(function () {
+    Path.map("#/tipoactividad/new").to(function () {
         $('#indexContenidoJsp').spinner();
         //var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oActividadControl.new($('#indexContenido'), null, oActividadModel, oActividadView);
+        oTipoactividadControl.new($('#indexContenido'), null, oTipoactividadModel, oTipoactividadView);
+        $('#indexContenidoJsp').empty();
+        return false;
+    });
+    Path.map("#/tipoactividad/new/:url").to(function () {
+        $('#indexContenidoJsp').spinner();
+        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
+        oTipoactividadControl.new($('#indexContenido'), paramsObject, oTipoactividadModel, oTipoactividadView);
         $('#indexContenidoJsp').empty();
         return false;
     });
 
-    Path.map("#/actividad/new/:url").to(function () {
+    Path.map("#/tipoactividad/remove/:id").to(function () {
         $('#indexContenidoJsp').spinner();
         var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oActividadControl.new($('#indexContenido'), paramsObject, oActividadModel, oActividadView);
-        $('#indexContenidoJsp').empty();
-        return false;
-    });
-
-    Path.map("#/actividad/remove/:id").to(function () {
-        $('#indexContenidoJsp').spinner();
-        var paramsObject = param().defaultizeUrlObjectParameters(param().getUrlObjectFromUrlString(this.params['url']));
-        oActividadControl.remove($('#indexContenido'), paramsObject['id'], oActividadModel, oActividadView);
+        oTipoactividadControl.remove($('#indexContenido'), paramsObject['id'], oTipoactividadModel, oTipoactividadView);
         $('#indexContenidoJsp').empty();
         return false;
     });

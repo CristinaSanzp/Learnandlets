@@ -20,26 +20,14 @@ package net.daw.service.generic.specific.implementation;
 import net.daw.service.generic.implementation.TableServiceGenImpl;
 import java.sql.Connection;
 import javax.servlet.ServletException;
-import net.daw.bean.generic.specific.implementation.TrabajoBeanGenSpImpl;
-import net.daw.dao.generic.specific.implementation.TrabajoDaoGenSpImpl;
+import net.daw.bean.generic.specific.implementation.ActividadBeanGenSpImpl;
+import net.daw.dao.generic.specific.implementation.ActividadDaoGenSpImpl;
 import net.daw.helper.AppConfigurationHelper;
 
-public class TrabajoServiceGenSpImpl extends TableServiceGenImpl {
+public class ActividadServiceGenSpImpl extends TableServiceGenImpl {
 
-     public TrabajoServiceGenSpImpl(String strObject, String pojo, Connection con) {
+    public ActividadServiceGenSpImpl(String strObject, String pojo, Connection con) {
         super(strObject, pojo, con);
     }
 
-    public String getContenido(Integer id) throws Exception {
-        String data;
-        try {
-            TrabajoBeanGenSpImpl oTareaBean = new TrabajoBeanGenSpImpl();
-            oTareaBean.setId(id);
-            TrabajoDaoGenSpImpl oTareaDao = new TrabajoDaoGenSpImpl(strObjectName, oConnection);
-            oTareaBean = oTareaDao.get(oTareaBean, AppConfigurationHelper.getJsonDepth());
-            return "{\"data\":\"" + oTareaBean.getDescripcion() + "\"}";
-        } catch (Exception e) {
-            throw new ServletException("GetDescripcion: View Error: " + e.getMessage());
-        }
-    }
 }
