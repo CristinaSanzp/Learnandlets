@@ -20,7 +20,7 @@
 <%@page import="net.daw.helper.EstadoHelper"%>
 <div class="jumbotron">
     <%--<h1><%=AppInformationHelper.getAppName()%></h1> --%>
-    <img src="css/images/tituloprincipal3.png" class="titulopagprincipal"/>
+    <img src="css/images/tituloprincipal5.png" class="titulopagprincipal"/>
     <%-- <%
         if (EstadoHelper.getTipo_estado() == EstadoHelper.getTipo_estado().Debug) {
             out.print("<h5>Modo debug</h5>");
@@ -30,24 +30,15 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div class="col-md-4 bordeprin">
+            <div class="col-md-4  col-md-offset-1 bordeprin">
                 <h3>¿Qué es <%=AppInformationHelper.getAppName()%>?</h3>
                 <p>Es una aplicación didáctica para aprender a organizar y desarrollar 
                     aplicaciones AJAX. Está pensado para soportar mantenimientos 
                     CRUDL (create remove update delete list).</p>
             </div>
          
-            <div class="col-md-4 bordeprin">
-                <h3>¿Quién la ha desarrollado?</h3>
-                <p>
-                    La ha desarrollado <%=EstadoHelper.getAutor()%>,
-                    profesor de DAW en el CPIFP Ausiàs March de Valencia (Spain).                    
-                    Puedes contactar en <%=EstadoHelper.getMailAutor()%>.
-                    En su desarrollo han participado los alumnos de segundo de 
-                    DAW de las promociones 2012-2013, 2013-2014 y 2014-2015.
-                </p>
-            </div> 
-            <div class="col-md-4 bordeprin">
+          
+            <div class="col-md-4  bordeprin">
                 <h3>¿Qué licencia tiene?</h3>
                 <p>La he liberado con licencia <%=EstadoHelper.getLicenciaLink()%></p>
             </div>

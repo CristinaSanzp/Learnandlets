@@ -12,26 +12,32 @@ and open the template in the editor.
 
 body {
     padding-top: 80px;
-    background-color: white;
+    background-image: url(../images/back.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .jumbotron {
-    border: 1px solid lightcoral;
-    background-color: white ;
+   
+    background: none;
+    
 }
 
 .titulopagprincipal{
-    margin-left: 20%;
+    margin-left: 10%;
 }
 
 .bordeprin{
-    background-color: lightblue;
+    border: 1px solid gray;
+    background-color: white;
+    margin-right: 12%;
+   
     
 }
 
 .panel-default>.panel-heading {
-    background-color:#60a917;
-    color:whitesmoke;
+  /*  background-color:#60a917;
+    color:whitesmoke;*/
 }
 
 th{
